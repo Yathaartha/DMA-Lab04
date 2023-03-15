@@ -1,6 +1,8 @@
 DessertClicker - Code
 =====================
 
+![](activity_and_lifecycle.gif)
+
 Code for Android Basics Codelab.
 
 Introduction
