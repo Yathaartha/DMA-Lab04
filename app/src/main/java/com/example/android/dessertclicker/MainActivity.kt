@@ -70,6 +70,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         Log.d(TAG, "onCreate Called")
 
+        // Restore the revenue and dessertsSold if there is a savedInstanceState
         if(savedInstanceState != null) {
             revenue = savedInstanceState.getInt(KEY_REVENUE, 0)
             dessertsSold = savedInstanceState.getInt(KEY_DESSERT_SOLD, 0)
@@ -91,6 +92,9 @@ class MainActivity : AppCompatActivity() {
         binding.dessertButton.setImageResource(currentDessert.imageId)
     }
 
+    /*
+    Override all lifecycle methods and log them
+     */
     override fun onStart() {
         super.onStart()
         Log.d(TAG, "onStart Called")
@@ -188,6 +192,9 @@ class MainActivity : AppCompatActivity() {
         return super.onOptionsItemSelected(item)
     }
 
+    /*
+    Save the current state of the app
+     */
     override fun onSaveInstanceState(outState: Bundle) {
         outState.putInt(KEY_REVENUE, revenue)
         outState.putInt(KEY_DESSERT_SOLD, dessertsSold)
